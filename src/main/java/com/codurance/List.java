@@ -9,7 +9,7 @@ public class List<T> {
   }
 
   public T get(int index) {
-    if (size == 0){
+    if (size <= index){
       throw new IndexOutOfBoundsException();
     }else {
       return element;

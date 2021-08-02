@@ -42,4 +42,14 @@ public class ListShould {
 
     assertThat(integer).isEqualTo(1);
   }
+
+  @Test
+  void get_element_at_position_1_from_array_with_one_element_throwsException() {
+    List<Integer> list = new List<>();
+    list.add(1);
+
+    assertThrows(IndexOutOfBoundsException.class, () -> {
+      list.get(1);
+    });
+  }
 }
