@@ -86,4 +86,31 @@ public class ListShould {
 
     assertThat(result).isEqualTo(1);
   }
+
+  @Test
+  void add_three_elements_and_remove_one_should_have_sizeOfTwo() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    list.remove(2);
+
+    int size = list.size();
+
+    assertThat(size).isEqualTo(2);
+  }
+
+  @Test
+  void add_three_elements_and_remove_one_should_return_element() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    Integer removed = list.remove(1);
+
+    assertThat(removed).isEqualTo(2);
+  }
+
 }

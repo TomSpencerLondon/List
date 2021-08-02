@@ -1,22 +1,18 @@
 package com.codurance;
 
-import java.lang.reflect.Array;
-
 public class List<T> {
   private T[] elements;
-  private int size;
-
 
   public List(Class<T> klass) {
-    elements = (T[]) Array.newInstance(klass, 10);
+    elements = (T[]) new Object[0];
   }
 
   public int size() {
-    return size;
+    return elements.length;
   }
 
   public T get(int index) {
-    if (size <= index){
+    if (size() <= index){
       throw new IndexOutOfBoundsException();
     }else {
       return elements[index];
@@ -24,7 +20,17 @@ public class List<T> {
   }
 
   public void add(T element) {
-    elements[size()] = element;
-    size++;
+    T[] array = (T[]) new Object[size() + 1];
+    for (int i = 0; i < elements.length; i++){
+      array[i] = elements[i];
+    }
+    array[size()] = element;
+    elements = array;
+  }
+
+  public T remove(int index) {
+    var removedElement = elements[index];
+    elements = (T[]) new Object[size() - 1];
+    return removedElement;
   }
 }
