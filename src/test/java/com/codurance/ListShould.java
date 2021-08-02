@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ListShould {
   @Test
   public void have_sizeOfZero_when_empty() {
-    List<Integer> list = new List<>();
+    List<Integer> list = new List<>(Integer.class);
     int size = list.size();
 
     assertThat(size).isEqualTo(0);
@@ -17,7 +17,7 @@ public class ListShould {
 
   @Test
   void have_sizeOfOne_when_has_one_element() {
-    List<Integer> list = new List<>();
+    List<Integer> list = new List<>(Integer.class);
     list.add(1);
     int size = list.size();
 
@@ -26,7 +26,7 @@ public class ListShould {
 
   @Test
   void get_element_fromEmptyArray_throwsAnException() {
-    List<Integer> list = new List<>();
+    List<Integer> list = new List<>(Integer.class);
 
     assertThrows(IndexOutOfBoundsException.class, () -> {
       list.get(0);
@@ -35,7 +35,7 @@ public class ListShould {
 
   @Test
   void get_element_from_list_with_one_element_returns_the_element() {
-    List<Integer> list = new List<>();
+    List<Integer> list = new List<>(Integer.class);
     list.add(1);
 
     int integer = list.get(0);
@@ -44,12 +44,46 @@ public class ListShould {
   }
 
   @Test
-  void get_element_at_position_1_from_array_with_one_element_throwsException() {
-    List<Integer> list = new List<>();
+  void get_element_at_position_1_from_list_with_one_element_throwsException() {
+    List<Integer> list = new List<>(Integer.class);
     list.add(1);
 
     assertThrows(IndexOutOfBoundsException.class, () -> {
       list.get(1);
     });
+  }
+
+  @Test
+  void get_element_at_position_2_from_list_with_two_elements_throwsException() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+
+    assertThrows(IndexOutOfBoundsException.class, () -> {
+      list.get(2);
+    });
+  }
+
+  @Test
+  void gets_second_element_from_list_with_two_elements() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+
+    int result = list.get(1);
+
+    assertThat(result).isEqualTo(2);
+  }
+
+
+  @Test
+  void gets_first_element_from_list_with_two_elements() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+
+    int result = list.get(0);
+
+    assertThat(result).isEqualTo(1);
   }
 }
