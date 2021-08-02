@@ -32,4 +32,14 @@ public class ListShould {
       list.get(0);
     });
   }
+
+  @Test
+  void get_element_from_list_with_one_element_returns_the_element() {
+    List<Integer> list = new List<>();
+    list.add(1);
+
+    int integer = list.get(0);
+
+    assertThat(integer).isEqualTo(1);
+  }
 }

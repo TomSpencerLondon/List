@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.codurance.ListShould" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-02T16:24:58" hostname="Toms-MacBook-Pro-2.local" time="0.068">
+<testsuite name="com.codurance.ListShould" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-08-02T16:28:45" hostname="Toms-MacBook-Pro-2.local" time="0.066">
   <properties/>
-  <testcase name="get_element_fromEmptyArray_throwsAnException()" classname="com.codurance.ListShould" time="0.018"/>
-  <testcase name="have_sizeOfZero_when_empty()" classname="com.codurance.ListShould" time="0.047"/>
-  <testcase name="have_sizeOfOne_when_has_one_element()" classname="com.codurance.ListShould" time="0.002"/>
+  <testcase name="get_element_fromEmptyArray_throwsAnException()" classname="com.codurance.ListShould" time="0.016"/>
+  <testcase name="get_element_from_list_with_one_element_returns_the_element()" classname="com.codurance.ListShould" time="0.046"/>
+  <testcase name="have_sizeOfZero_when_empty()" classname="com.codurance.ListShould" time="0.001"/>
+  <testcase name="have_sizeOfOne_when_has_one_element()" classname="com.codurance.ListShould" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
