@@ -30,7 +30,15 @@ public class List<T> {
 
   public T remove(int index) {
     var removedElement = elements[index];
-    elements = (T[]) new Object[size() - 1];
+
+    T[] array = (T[]) new Object[size() - 1];
+    for (int i = 0, j = 0; i < elements.length; i++){
+      if (index != i){
+        array[j] = elements[i];
+        j++;
+      }
+    }
+    elements = array;
     return removedElement;
   }
 }

@@ -113,4 +113,29 @@ public class ListShould {
     assertThat(removed).isEqualTo(2);
   }
 
+  @Test
+  void add_three_elements_and_remove_one_should_leave_element_zero() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    list.remove(1);
+    Integer first = list.get(0);
+
+    assertThat(first).isEqualTo(1);
+  }
+
+  @Test
+  void add_three_elements_and_remove_second_should_leave_third_as_second() {
+    List<Integer> list = new List<>(Integer.class);
+    list.add(1);
+    list.add(2);
+    list.add(3);
+
+    list.remove(1);
+    Integer second = list.get(1);
+
+    assertThat(second).isEqualTo(3);
+  }
 }
