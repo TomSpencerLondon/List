@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.codurance.ListShould" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-02T16:18:03" hostname="Toms-MacBook-Pro-2.local" time="0.062">
+<testsuite name="com.codurance.ListShould" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-08-02T16:21:27" hostname="Toms-MacBook-Pro-2.local" time="0.062">
   <properties/>
-  <testcase name="have_sizeOfZero_when_empty()" classname="com.codurance.ListShould" time="0.062"/>
+  <testcase name="get_element_fromEmptyArray_throwsAnException()" classname="com.codurance.ListShould" time="0.016"/>
+  <testcase name="have_sizeOfZero_when_empty()" classname="com.codurance.ListShould" time="0.045"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
